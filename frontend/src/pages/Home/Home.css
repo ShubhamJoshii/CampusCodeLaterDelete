@@ -1,0 +1,327 @@
+/* ================= CORE LAYOUT ================= */
+.hero-section {
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem 2rem;
+  min-height: 85vh;
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+
+  /* ================= 1021px ================= */
+  @media (max-width: 1021px) {
+    gap: 2rem;
+
+    .hero-visual {
+      display: none;
+    }
+
+    .hero-content {
+      align-items: center;
+      text-align: center;
+      .hero-btns {
+        .btn-primary,
+        .btn-secondary {
+          font-size: 1rem;
+          padding: 0.85rem 1.5rem;
+        }
+      }
+
+      .hero-description {
+        max-width: 100%;
+      }
+    }
+  }
+
+  /* ================= 768px ================= */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 1.5rem 1rem 3rem 1rem;
+    min-height: auto;
+    gap: 2rem;
+
+    .hero-content {
+      gap: 1.2rem;
+
+      .hero-title {
+        font-size: 2.2rem;
+        line-height: 1.2;
+      }
+
+      .hero-description {
+        font-size: 1rem;
+      }
+
+      .hero-btns {
+        flex-direction: column;
+        width: 100%;
+
+        button {
+          width: 100% !important;
+          font-size: 0.95rem !important;
+          padding: 0.7rem 1rem !important;
+        }
+      }
+
+      .hero-features {
+        align-items: center;
+        text-align: center;
+      }
+    }
+  }
+
+  /* ================= 425px ================= */
+  @media (max-width: 425px) {
+    padding: 1rem 0.75rem 2rem 0.75rem;
+
+    .hero-content {
+      gap: 1rem;
+
+      .learner-badge {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.9rem;
+      }
+
+      .hero-title {
+        font-size: 1.8rem;
+      }
+
+      .hero-description {
+        font-size: 0.9rem;
+      }
+
+      .hero-btns {
+        gap: 0.6rem;
+
+        .btn-primary,
+        .btn-secondary {
+          font-size: 0.85rem;
+          padding: 0.6rem 0.8rem;
+          font-weight: 600 !important;
+        }
+      }
+
+      .hero-features {
+        gap: 0.5rem;
+
+        .feature-item {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+
+  /* ================= CONTENT ================= */
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 1.5rem;
+    z-index: 2;
+
+    .learner-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      color: #4f46e5;
+      font-size: 0.875rem;
+      font-weight: 700;
+      width: fit-content;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+
+      .text-indigo {
+        background: linear-gradient(90deg, #4f46e5, #818cf8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    .hero-description {
+      font-size: 1.15rem;
+      color: #64748b;
+      line-height: 1.6;
+      max-width: 35rem;
+    }
+
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+
+      .btn-primary {
+        padding: 1rem 2rem;
+        background-color: #0f172a;
+        color: white;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: #4f46e5;
+          transform: translateY(-2px);
+          box-shadow: 0 12px 20px rgba(79, 70, 229, 0.3);
+        }
+      }
+
+      .btn-secondary {
+        padding: 1rem 2rem;
+        background-color: white;
+        color: #334155;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        border: 1px solid #e2e8f0;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #f1f5f9;
+        }
+      }
+    }
+
+    .hero-features {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: #475569;
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  /* ================= VISUAL ================= */
+  .hero-visual {
+    position: relative;
+    flex: 1;
+
+    .glass-card {
+      position: relative;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(16px);
+      border-radius: 2rem;
+      padding: 2rem;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+
+      .card-header {
+        font-weight: 800;
+        font-size: 0.9rem;
+        color: #94a3b8;
+        margin-bottom: 1.5rem;
+      }
+
+      .list-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.75rem 1rem;
+        background: white;
+        border-radius: 1rem;
+        margin-bottom: 0.75rem;
+
+        .item-rank {
+          font-weight: 800;
+          color: #cbd5e1;
+        }
+
+        .item-skeleton {
+          .skeleton-title {
+            font-size: 0.9rem;
+          }
+
+          .skeleton-subtitle {
+            font-size: 0.75rem;
+            color: #94a3b8;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================= BLOBS ================= */
+.blob {
+  position: absolute;
+  width: 25rem;
+  height: 25rem;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+}
+
+.blob-1 {
+  top: -10%;
+  left: -5%;
+  background-color: #c7d2fe;
+}
+
+.blob-2 {
+  bottom: 5%;
+  right: 5%;
+  background-color: #e9d5ff;
+}
+
+/* ================= ANIMATIONS ================= */
+.ping-container {
+  position: relative;
+  display: flex;
+  height: 0.6rem;
+  width: 0.6rem;
+
+  .ping-animate {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #818cf8;
+    border-radius: 50%;
+    animation: ping 1.5s infinite;
+  }
+
+  .ping-dot {
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: #4f46e5;
+    border-radius: 50%;
+  }
+}
+
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}

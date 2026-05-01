@@ -1,0 +1,39 @@
+.controls {
+  display: flex;
+  gap: 10px;
+
+  .searchInput {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    flex: 1;
+    outline: none;
+    transition: border 0.2s ease;
+
+    &:focus {
+      border-color: #6366f1;
+    }
+  }
+  .difficultySelect {
+    padding: 10px;
+    width: 150px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background-color: white;
+    cursor: pointer;
+  
+    &:focus {
+      outline: none;
+      border-color: #6366f1;
+    }
+  }
+  @media (max-width:768px) {
+    font-size: 13px;
+    .difficultySelect{
+      width: 110px;
+    }
+  }
+}
+
+

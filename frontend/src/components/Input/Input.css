@@ -1,0 +1,65 @@
+.inputContainer {
+  width: 100%;
+  .inputContainer-inner {
+    position: relative;
+    border: 1px solid #31313147;
+    border-radius: 5px;
+    padding: 12px 8px;
+    display: flex;
+    min-width: 370px;
+    width: 100%;
+    input {
+      background-color: transparent;
+      z-index: 99;
+      position: relative;
+      box-sizing: border-box;
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: 16px;
+    }
+    #eye {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      cursor: pointer;
+      transform: translate(0, -50%);
+      height: 100%;
+      width: 40px;
+      z-index: 999;
+      /* background-color: rgb(151, 39, 39); */
+      border-radius: 0 4px 4px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .labelLine {
+      position: absolute;
+      top: 50%;
+      transform: translate(20px, -50%);
+      transition: 0.2s ease;
+    }
+
+    &:has(#eye) input {
+      width: calc(100% - 30px);
+    }
+
+    input:focus + .labelLine,
+    input:valid + .labelLine {
+      z-index: 99;
+      color: #3869eb;
+      background-color: white;
+      padding: 0 4px;
+      font-size: 12px;
+      font-weight: bolder;
+      transform: translate(14px, -34px);
+    }
+  }
+}
+#formErrorMsg {
+  font-size: 12px;
+  color: red;
+  text-align: end;
+  margin: 0;
+  margin: 4px 4px 0 0;
+}

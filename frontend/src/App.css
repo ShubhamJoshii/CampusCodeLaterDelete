@@ -1,0 +1,67 @@
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  /* padding-bottom: 40px; */
+  padding-bottom: 40px;
+  flex: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100%;
+  @media (max-width: 768px) {
+    gap: 16px;
+  }
+}
+
+.WrapperContainer{
+  background-color: #f8fafc ;
+  min-height: 100vh;
+  color: #0f172b ;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  .wrapperSection {
+    padding-bottom: 80px !important;
+    width: calc(100vw - 48px);
+    height: calc(100vh - 140px);
+    display: flex;
+    gap: 20px;
+    align-items: start;
+    position: fixed;
+    top: 130px;
+  }
+  @media (max-width: 1024px) {
+    padding: 16px;
+    .wrapperSection{
+      top: 110px;
+      width: calc(100vw - 32px);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    padding: 12px;
+    .wrapperSection{
+      top: 86px;
+      padding: 12px;
+      width: 100vw;
+      left: 0;
+      /* height: auto; */
+      overflow: scroll;
+    }
+  }
+  @media (max-width: 425px) {
+    .wrapperSection{
+      top: 80px;
+    }
+  }
+}
+
+
+.problemList {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+}

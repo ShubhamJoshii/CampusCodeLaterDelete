@@ -1,0 +1,208 @@
+.problemContainer {
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 10px;
+  flex: 1;
+  .problemListContainer {
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    .topicBar {
+      display: flex;
+      align-items: center;
+      padding: 12px 20px;
+      border-bottom: 1px solid #f3f4f6;
+      gap: 15px;
+
+      .topicTitle {
+        font-weight: 600;
+        color: #374151;
+        font-size: 14px;
+      }
+
+      .topicScrollWrapper {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        position: relative;
+        width: 92%;
+        .scrollBtn {
+          background: white;
+          border: none;
+          cursor: pointer;
+        }
+
+        .topicScroll {
+          display: flex;
+          gap: 8px;
+          overflow-x: auto;
+          scroll-behavior: smooth;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
+          .topicBtn {
+            text-transform: capitalize;
+            white-space: nowrap;
+            padding: 6px 18px;
+            border-radius: 4px;
+            font-size: 13px;
+            border: none;
+            background-color: #f3f4f6;
+            color: #4b5563;
+            cursor: pointer;
+
+            &.active {
+              background-color: #1f2937;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    .listBody {
+      padding: 0 20px;
+      overflow: auto;
+        .problemBoxContainer {
+          overflow: unset !important;
+        }
+     
+      .solvedText {
+        margin: 12px 0;
+        font-size: 12px;
+        color: #9ca3af;
+        text-align: right;
+      }
+
+      .problemBox {
+        border: 1px solid #f3f4f6;
+        border-radius: 8px;
+        margin-bottom: 20px;
+
+        .problemRow {
+          display: flex;
+          align-items: center;
+          padding: 12px 15px;
+          border-bottom: 1px solid #f3f4f6;
+
+          &:nth-child(even) {
+            background-color: #fafafa;
+          }
+
+          &:nth-child(odd) {
+            background-color: white;
+          }
+
+          .attemptIcon {
+            width: 30px;
+            cursor: pointer;
+            flex-shrink: 0;
+          }
+
+          .attemptIcon:hover .tooltip {
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
+          }
+
+          .problemTitle {
+            flex: 1;
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          .listRight {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+            text-transform: capitalize;
+            letter-spacing: 0.8px;
+
+            .difficultyTag {
+              width: 70px;
+              text-align: center;
+              border-radius: 4px;
+              font-size: 12px;
+              padding: 4px 6px;
+            }
+
+            .categoryTag {
+              background-color: #eef2ff;
+              color: #4f46e5;
+              font-weight: 500;
+              white-space: nowrap;
+              width: 90px;
+              text-align: center;
+              border-radius: 4px;
+              font-size: 12px;
+              padding: 4px 6px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .easy {
+    background-color: #e7f3ef;
+    color: #00af9b;
+  }
+
+  .medium {
+    background-color: #fff7e6;
+    color: #ffb800;
+  }
+
+  .hard {
+    background-color: #fff1f0;
+    color: #ff2d55;
+  }
+
+  .defaultDiff {
+    background-color: #f3f4f6;
+    color: #374151;
+  }
+  @media (max-width: 768px) {
+    .problemListContainer {
+      .topicBar {
+        .topicTitle {
+          font-size: 12px !important;
+        }
+        .topicScrollWrapper {
+          width: 88%;
+          .topicScroll button {
+            font-size: 12px !important;
+          }
+        }
+      }
+      .listBody {
+        overflow: hidden;
+        padding: 10px;
+        .problemBoxContainer {
+          overflow-x: scroll !important;
+        }
+        .problemBox {
+          min-width: 500px;
+          .problemRow {
+            padding: 8px 15px;
+            .problemTitle {
+              font-size: 12px;
+            }
+            .listRight .categoryTag {
+              width: auto;
+              span {
+                font-size: 12px !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
